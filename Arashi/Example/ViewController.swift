@@ -10,57 +10,29 @@ import UIKit
 import Arashi
 
 class ViewController: UIViewController {
-    @IBOutlet weak var textView: UITextView!
     
+    private var arashi: Arashi?
+    
+    @IBOutlet weak var innerTextView: UITextView!
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var innerTextViewTop: NSLayoutConstraint!
     @IBOutlet weak var textViewHorizontal: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        TestFunc.testLog()
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(keyboardWillShow(_:)),
-            name: UIResponder.keyboardWillShowNotification,
-            object: nil)
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(keyboardWillHide(_:)),
-            name: UIResponder.keyboardWillHideNotification,
-            object: nil)
+        arashi = Arashi(parentView: view, targetView: innerTextView, delegate: self)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(tableTapped(_:)))
         self.view.addGestureRecognizer(tap)
         tap.delegate = self
     }
-
-    /// キーボード表示時。
-    @objc func keyboardWillShow(_ notification: Notification) {
-        guard let keyboardFrame = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
-        let noteViewYAndHeight = textView.frame.origin.y + textView.frame.height
-        if noteViewYAndHeight > keyboardFrame.origin.y {
-            print("\(noteViewYAndHeight - (keyboardFrame.origin.y - 20.0))")
-            textViewHorizontal.constant -= noteViewYAndHeight - (keyboardFrame.origin.y - 20.0)
-        }
-        UIView.animate(withDuration: 1, animations: {
-            self.view.layoutIfNeeded()
-        })
-    }
-    
-    /// キーボード非表示表示時。
-    @objc func keyboardWillHide(_ notification: Notification) {
-        print("😄閉じた")
-        textViewHorizontal.constant = 0
-//        UIView.animate(withDuration: 0.1, animations: {
-//            self.view.layoutIfNeeded()
-//        })
-    }
     
     /// 画面タップ時。
     @objc func tableTapped(_ recognizer: UITapGestureRecognizer) {
         if textView.isFirstResponder {
-            //キーボードを閉じる
             textView.resignFirstResponder()
+        } else if innerTextView.isFirstResponder {
+            innerTextView.resignFirstResponder()
         }
     }
 }
@@ -71,5 +43,35 @@ extension ViewController: UIGestureRecognizerDelegate {
             return true
         }
         return !isValid
+    }
+}
+
+extension ViewController: ArashiDelegate {
+    func arashiKeyboardWillShow(notification: Notification, diff: CGFloat?) {
+        print("😄 \(#function)")
+        if let diff = diff {
+            innerTextViewTop.constant -= diff
+//            textViewHorizontal.constant -= diff
+            UIView.animate(withDuration: 1, animations: {
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    
+    func arashiKeyboardDidShow(notification: Notification, diff: CGFloat?) {
+        
+    }
+    
+    func arashiKeyboardWillHide(notification: Notification) {
+        print("😄 \(#function)")
+//        textViewHorizontal.constant = 0
+        innerTextViewTop.constant = 8
+        UIView.animate(withDuration: 1, animations: {
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    func arashiKeyboardDidHide(notification: Notification) {
+        
     }
 }

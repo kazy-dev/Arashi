@@ -24,7 +24,6 @@
 		5A42FBE62320B8C700B8A300 /* Arashi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A42FBDC2320B8C700B8A300 /* Arashi.framework */; };
 		5A42FBEB2320B8C700B8A300 /* ArashiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A42FBEA2320B8C700B8A300 /* ArashiTests.swift */; };
 		5A42FBED2320B8C700B8A300 /* Arashi.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A42FBDF2320B8C700B8A300 /* Arashi.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5A42FBF72320BC3400B8A300 /* TestFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A42FBF62320BC3400B8A300 /* TestFunc.swift */; };
 		5A42FBFF2320BCC000B8A300 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A42FBFE2320BCC000B8A300 /* AppDelegate.swift */; };
 		5A42FC012320BCC000B8A300 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A42FC002320BCC000B8A300 /* ViewController.swift */; };
 		5A42FC042320BCC000B8A300 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A42FC022320BCC000B8A300 /* Main.storyboard */; };
@@ -32,6 +31,8 @@
 		5A42FC092320BCC100B8A300 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A42FC072320BCC100B8A300 /* LaunchScreen.storyboard */; };
 		5A42FC142320BCC100B8A300 /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A42FC132320BCC100B8A300 /* ExampleTests.swift */; };
 		5A42FC1F2320BCC100B8A300 /* ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A42FC1E2320BCC100B8A300 /* ExampleUITests.swift */; };
+		5A42FC762320CA3600B8A300 /* Arashi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A42FC752320CA3600B8A300 /* Arashi.swift */; };
+		5A42FC7C2320D4B900B8A300 /* Arashi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A42FBDC2320B8C700B8A300 /* Arashi.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +66,6 @@
 		5A42FBE52320B8C700B8A300 /* ArashiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArashiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A42FBEA2320B8C700B8A300 /* ArashiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArashiTests.swift; sourceTree = "<group>"; };
 		5A42FBEC2320B8C700B8A300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5A42FBF62320BC3400B8A300 /* TestFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFunc.swift; sourceTree = "<group>"; };
 		5A42FBFC2320BCC000B8A300 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A42FBFE2320BCC000B8A300 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A42FC002320BCC000B8A300 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +79,7 @@
 		5A42FC1A2320BCC100B8A300 /* ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A42FC1E2320BCC100B8A300 /* ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleUITests.swift; sourceTree = "<group>"; };
 		5A42FC202320BCC100B8A300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A42FC752320CA3600B8A300 /* Arashi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arashi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A42FC7C2320D4B900B8A300 /* Arashi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,7 +153,7 @@
 			children = (
 				5A42FBDF2320B8C700B8A300 /* Arashi.h */,
 				5A42FBE02320B8C700B8A300 /* Info.plist */,
-				5A42FBF62320BC3400B8A300 /* TestFunc.swift */,
+				5A42FC752320CA3600B8A300 /* Arashi.swift */,
 			);
 			path = Arashi;
 			sourceTree = "<group>";
@@ -428,7 +430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A42FBF72320BC3400B8A300 /* TestFunc.swift in Sources */,
+				5A42FC762320CA3600B8A300 /* Arashi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,6 +642,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Arashi/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -667,6 +670,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Arashi/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -725,6 +729,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 578V78AZC9;
 				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -743,6 +748,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 578V78AZC9;
 				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
