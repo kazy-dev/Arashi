@@ -17,6 +17,9 @@ Exampleも入れてあります。
 ## 環境 
 Xcode 10.2 以上  
 Swift4.2 以上  
+
+## スクリーンショット
+<image src="https://github.com/kazy-dev/Arashi/blob/develop/images/Arashi_demo.gif" width="320px">
  
 ## 使い方  
   
@@ -50,15 +53,20 @@ arashi = Arashi(parentView: view, targetView: innerTextView, delegate: self)
             })
         }
     }
-    func arashiKeyboardDidShow(notification: Notification, diff: CGFloat?) {
-    }
+    
     func arashiKeyboardWillHide(notification: Notification) {
         innerTextViewTop.constant = 8
         UIView.animate(withDuration: 1, animations: {
             self.view.layoutIfNeeded()
         })
     }
+    
+    func arashiKeyboardDidShow(notification: Notification, diff: CGFloat?) {
+    
+    }
+    
     func arashiKeyboardDidHide(notification: Notification) {
+    
     }
 }
 ```
