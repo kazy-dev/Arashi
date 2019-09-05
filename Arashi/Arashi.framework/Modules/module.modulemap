@@ -1,0 +1,11 @@
+framework module Arashi {
+  umbrella header "Arashi.h"
+
+  export *
+  module * { export * }
+}
+
+module Arashi.Swift {
+    header "Arashi-Swift.h"
+    requires objc
+}
